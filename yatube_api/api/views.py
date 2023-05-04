@@ -1,9 +1,10 @@
-from rest_framework import viewsets, mixins, permissions, filters
+from posts.models import Comment, Follow, Group, Post
+from rest_framework import filters, mixins, permissions, viewsets
 from rest_framework.pagination import LimitOffsetPagination
-from posts.models import Post, Group, Comment, Follow
-from .serializers import (PostSerializer, GroupSerializer,
-                          CommentSerializer, FollowSerializer)
+
 from .permissions import IsAuthorOrReadOnlyPermission
+from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
+                          PostSerializer)
 
 
 class ListCreateViewSet(mixins.ListModelMixin, mixins.CreateModelMixin,
