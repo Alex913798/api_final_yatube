@@ -3,7 +3,7 @@ from http import HTTPStatus
 from django.db.utils import IntegrityError
 import pytest
 
-from posts.models import Post
+from yatube_api.posts.models import Post
 
 
 @pytest.mark.django_db(transaction=True)
